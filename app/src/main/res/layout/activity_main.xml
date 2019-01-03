@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundColor"
+    tools:context=".MainActivity">
+
+    <Space
+        android:id="@+id/space"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        app:layout_constraintBottom_toTopOf="@id/display"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread" />
+
+    <TextView
+        android:id="@+id/display"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:ellipsize="none"
+        android:gravity="right|bottom"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="90sp"
+        app:layout_constraintBottom_toTopOf="@id/ac"
+        app:layout_constraintLeft_toLeftOf="@id/ac"
+        app:layout_constraintRight_toRightOf="@id/division"
+        app:layout_constraintTop_toBottomOf="@id/space"
+        tools:text="000.0" />
+
+    <TextView
+        android:id="@+id/ac"
+        style="@style/specialButton"
+        android:text="AC"
+        app:layout_constraintBottom_toTopOf="@id/num7"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/backspace"
+        app:layout_constraintTop_toBottomOf="@id/display" />
+
+    <TextView
+        android:id="@+id/backspace"
+        style="@style/specialButton"
+        android:text="@string/arrow_left"
+        app:layout_constraintLeft_toRightOf="@id/ac"
+        app:layout_constraintRight_toLeftOf="@id/pm"
+        app:layout_constraintTop_toTopOf="@id/ac" />
+
+    <TextView
+        android:id="@+id/pm"
+        style="@style/specialButton"
+        android:text="±"
+        app:layout_constraintLeft_toRightOf="@id/backspace"
+        app:layout_constraintRight_toLeftOf="@id/division"
+        app:layout_constraintTop_toTopOf="@id/ac" />
+
+    <TextView
+        android:id="@+id/division"
+        style="@style/specialButton2"
+        android:text="÷"
+        app:layout_constraintLeft_toRightOf="@id/pm"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ac" />
+
+    <TextView
+        android:id="@+id/num7"
+        style="@style/normalButton"
+        android:text="7"
+        app:layout_constraintBottom_toTopOf="@id/num4"
+        app:layout_constraintLeft_toLeftOf="@id/ac"
+        app:layout_constraintTop_toBottomOf="@id/ac" />
+
+    <TextView
+        android:id="@+id/num8"
+        style="@style/normalButton"
+        android:text="8"
+        app:layout_constraintLeft_toLeftOf="@id/pm"
+        app:layout_constraintTop_toTopOf="@id/num7" />
+
+    <TextView
+        android:id="@+id/num9"
+        style="@style/normalButton"
+        android:text="9"
+        app:layout_constraintLeft_toLeftOf="@id/backspace"
+        app:layout_constraintTop_toTopOf="@id/num7" />
+
+    <TextView
+        android:id="@+id/multiplication"
+        style="@style/specialButton2"
+        android:text="×"
+        app:layout_constraintLeft_toLeftOf="@id/division"
+        app:layout_constraintTop_toTopOf="@id/num7" />
+
+    <TextView
+        android:id="@+id/num4"
+        style="@style/normalButton"
+        android:text="4"
+        app:layout_constraintBottom_toTopOf="@id/num1"
+        app:layout_constraintLeft_toLeftOf="@id/ac"
+        app:layout_constraintTop_toBottomOf="@id/num7" />
+
+    <TextView
+        android:id="@+id/num5"
+        style="@style/normalButton"
+        android:text="5"
+        app:layout_constraintLeft_toLeftOf="@id/pm"
+        app:layout_constraintTop_toTopOf="@id/num4" />
+
+    <TextView
+        android:id="@+id/num6"
+        style="@style/normalButton"
+        android:text="6"
+        app:layout_constraintLeft_toLeftOf="@id/backspace"
+        app:layout_constraintTop_toTopOf="@id/num4" />
+
+    <TextView
+        android:id="@+id/subtraction"
+        style="@style/specialButton2"
+        android:text="-"
+        app:layout_constraintLeft_toLeftOf="@id/division"
+        app:layout_constraintTop_toTopOf="@id/num4" />
+
+    <TextView
+        android:id="@+id/num1"
+        style="@style/normalButton"
+        android:text="1"
+        app:layout_constraintBottom_toTopOf="@id/num0"
+        app:layout_constraintLeft_toLeftOf="@id/ac"
+        app:layout_constraintTop_toBottomOf="@id/num4" />
+
+    <TextView
+        android:id="@+id/num2"
+        style="@style/normalButton"
+        android:text="2"
+        app:layout_constraintLeft_toLeftOf="@id/pm"
+        app:layout_constraintTop_toTopOf="@id/num1" />
+
+    <TextView
+        android:id="@+id/num3"
+        style="@style/normalButton"
+        android:text="3"
+        app:layout_constraintLeft_toLeftOf="@id/backspace"
+        app:layout_constraintTop_toTopOf="@id/num1" />
+
+    <TextView
+        android:id="@+id/addition"
+        style="@style/specialButton2"
+        android:text="+"
+        app:layout_constraintLeft_toLeftOf="@id/division"
+        app:layout_constraintTop_toTopOf="@id/num1" />
+
+    <FrameLayout
+        android:id="@+id/num0"
+        style="@style/normalButton"
+        android:layout_width="0dp"
+        android:background="@drawable/normal_button_background_0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/ac"
+        app:layout_constraintRight_toRightOf="@id/backspace"
+        app:layout_constraintTop_toBottomOf="@id/num1">
+
+        <TextView
+            style="@style/normalButton"
+            android:background="@null"
+            android:clickable="false"
+            android:text="0" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/point"
+        style="@style/normalButton"
+        android:text="."
+        app:layout_constraintLeft_toLeftOf="@id/pm"
+        app:layout_constraintTop_toTopOf="@id/num0" />
+
+    <TextView
+        android:id="@+id/evaluate"
+        style="@style/specialButton2"
+        android:text="="
+        app:layout_constraintLeft_toLeftOf="@id/division"
+        app:layout_constraintTop_toTopOf="@id/num0" />
+</android.support.constraint.ConstraintLayout>

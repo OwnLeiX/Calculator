@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 若想避免初次启动首页未加载时无沉浸式状态栏效果的问题，请使用或继承此主题 -->
+    <style name="SupportTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@android:color/transparent</item>
+        <item name="colorPrimaryDark">@android:color/transparent</item>
+        <item name="colorAccent">@android:color/transparent</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:fitsSystemWindows">false</item>
+        <item name="android:clipToPadding">false</item>
+        <item name="backgroundColor">@color/black</item>
+        <item name="normalButtonBackground">@drawable/normal_button_background</item>
+        <item name="normalButtonTextColor">@color/grayFE</item>
+        <item name="specialButtonBackground">@drawable/special_button_background</item>
+        <item name="specialButtonTextColor">@color/black</item>
+        <item name="specialButtonBackground2">@drawable/special_button_background2</item>
+        <item name="specialButtonTextColor2">@color/grayFE</item>
+        <item name="specialButtonBackground2Selected">@drawable/special_button_background2</item>
+        <item name="specialButtonTextColor2Selected">@color/orange</item>
+    </style>
+</resources>

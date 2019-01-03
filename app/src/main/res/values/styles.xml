@@ -1,0 +1,50 @@
+<resources>
+    <!-- 若想避免初次启动首页未加载时无沉浸式状态栏效果的问题，请使用或继承此主题 -->
+    <style name="SupportTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@android:color/transparent</item>
+        <item name="colorPrimaryDark">@android:color/transparent</item>
+        <item name="colorAccent">@android:color/transparent</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:clipToPadding">true</item>
+        <item name="backgroundColor">@color/black</item>
+        <item name="normalButtonBackground">@drawable/normal_button_background</item>
+        <item name="normalButtonTextColor">@color/grayFE</item>
+        <item name="specialButtonBackground">@drawable/special_button_background</item>
+        <item name="specialButtonTextColor">@color/black</item>
+        <item name="specialButtonBackground2">@drawable/special_button_background2</item>
+        <item name="specialButtonTextColor2">@color/grayFE</item>
+        <item name="specialButtonBackground2Selected">@drawable/special_button_background2</item>
+        <item name="specialButtonTextColor2Selected">@color/orange</item>
+    </style>
+
+    <style name="baseButton">
+        <item name="android:layout_width">70dp</item>
+        <item name="android:layout_height">70dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="normalButton" parent="baseButton">
+        <item name="android:background">?attr/normalButtonBackground</item>
+        <item name="android:textColor">?attr/normalButtonTextColor</item>
+        <item name="android:textSize">35sp</item>
+    </style>
+
+    <style name="specialButton" parent="baseButton">
+        <item name="android:background">?attr/specialButtonBackground</item>
+        <item name="android:textColor">?attr/specialButtonTextColor</item>
+    </style>
+
+    <style name="specialButton2" parent="baseButton">
+        <item name="android:background">?attr/specialButtonBackground2</item>
+        <item name="android:textColor">?attr/specialButtonTextColor2</item>
+        <item name="android:textSize">35sp</item>
+    </style>
+
+    <style name="specialButton2Selected" parent="baseButton">
+        <item name="android:background">?attr/specialButtonBackground2Selected</item>
+        <item name="android:textColor">?attr/specialButtonTextColor2Selected</item>
+        <item name="android:textSize">35sp</item>
+    </style>
+</resources>

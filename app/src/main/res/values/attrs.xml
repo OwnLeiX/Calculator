@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="backgroundColor" format="reference" />
+    <attr name="normalButtonBackground" format="reference" />
+    <attr name="normalButtonTextColor" format="color" />
+    <attr name="specialButtonBackground" format="reference" />
+    <attr name="specialButtonTextColor" format="color" />
+    <attr name="specialButtonBackground2" format="reference" />
+    <attr name="specialButtonTextColor2" format="color" />
+    <attr name="specialButtonBackground2Selected" format="reference" />
+    <attr name="specialButtonTextColor2Selected" format="color" />
+</resources>
