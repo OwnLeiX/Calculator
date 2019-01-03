@@ -149,8 +149,8 @@ class CalculatorCore {
         mSavedOperator = CalculatorOperator.None
         mCurrentlyOperator = CalculatorOperator.None
         mOperatorNum = BigDecimal("0")
-        hasPoint = false
         isOperatingValue = true
+        hasPoint = mOperatingNum.compareTo(BigDecimal(mOperatingNum.toBigInteger())) != 0
         mSubscriber?.onValueChanged(getDisplayNumber())
     }
 
