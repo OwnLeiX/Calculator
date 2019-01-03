@@ -163,17 +163,17 @@ class CalculatorCore {
     }
 
     private fun getDisplayNumber(): String {
-        return formatNumberStr(mOperatingNum.toPlainString())
+        return formatNumberStr(mOperatingNum.toPlainString(), if (mOperatingNum.signum() < 0) 1 else 0)
     }
 
-    private fun formatNumberStr(numStr: String): String {
+    private fun formatNumberStr(numStr: String, offset: Int): String {
         var pointIndex = numStr.indexOf(".")
         if (pointIndex in 0..3 || numStr.length <= 3) return numStr
         if (pointIndex == -1)
             pointIndex = numStr.length
         var returnValue = StringBuilder(numStr)
         pointIndex -= 3
-        while (pointIndex > 0) {
+        while (pointIndex > 0 + offset) {
             returnValue.insert(pointIndex, ",")
             pointIndex -= 3
         }
