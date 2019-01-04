@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.util.TypedValue
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import lx.own.calculator.R
 import lx.own.calculator.core.CalculatorCore
@@ -108,6 +109,7 @@ class MainActivity : AppCompatActivity() {
         num9.tag = BigDecimal(9)
 
         val l = InnerClickListener()
+        switchTheme.setOnClickListener(l)
         num0.setOnClickListener(l)
         num1.setOnClickListener(l)
         num2.setOnClickListener(l)
@@ -164,6 +166,9 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.evaluate -> {
                     CalculatorCore.instance.evaluate()
+                }
+                R.id.switchTheme -> {
+                    Toast.makeText(this@MainActivity, "Not supported Now", Toast.LENGTH_LONG).show()
                 }
             }
         }

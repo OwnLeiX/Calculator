@@ -15,6 +15,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="spread" />
 
+    <ImageView
+        android:id="@+id/switchTheme"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginRight="10dp"
+        android:scaleType="centerCrop"
+        android:src="?attr/themeIcon"
+        app:layout_constraintBottom_toTopOf="@id/display"
+        app:layout_constraintRight_toRightOf="@id/division"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/display"
         android:layout_width="0dp"
@@ -24,13 +35,13 @@
         android:ellipsize="none"
         android:gravity="right|bottom"
         android:singleLine="true"
-        android:textColor="@color/white"
+        android:textColor="?attr/textColor"
         android:textSize="90sp"
         app:layout_constraintBottom_toTopOf="@id/ac"
         app:layout_constraintLeft_toLeftOf="@id/ac"
         app:layout_constraintRight_toRightOf="@id/division"
         app:layout_constraintTop_toBottomOf="@id/space"
-        tools:text="000.0" />
+        tools:text="999.9" />
 
     <TextView
         android:id="@+id/ac"
