@@ -13,8 +13,8 @@ import java.math.RoundingMode
  */
 class CalculatorCore {
 
-    private var mValueNum: BigDecimal = BigDecimal("0")
-    private var mOperatorNum: BigDecimal = BigDecimal("0")
+    private var mValueNum: BigDecimal = BigDecimal(0)
+    private var mOperatorNum: BigDecimal = BigDecimal(0)
     private var mOperatingNum: BigDecimal
         get() :BigDecimal {
             return if (isOperatingValue) mValueNum else mOperatorNum
@@ -72,7 +72,7 @@ class CalculatorCore {
             mSubscriber?.onValueChanged(getDisplayNumber())
     }
 
-    fun pm() {
+    fun negate() {
         mOperatingNum = mOperatingNum.negate()
         mSubscriber?.onValueChanged(getDisplayNumber())
     }
@@ -86,10 +86,10 @@ class CalculatorCore {
     /**
      * reset
      */
-    fun ac() {
+    fun clear() {
         if (isAllClearMode) {
-            mValueNum = BigDecimal("0")
-            mOperatorNum = BigDecimal("0")
+            mValueNum = BigDecimal(0)
+            mOperatorNum = BigDecimal(0)
             mSubscriber?.onValueChanged(getDisplayNumber())
             mCurrentlyOperator = CalculatorOperator.None
             mSavedOperator = CalculatorOperator.None
@@ -97,7 +97,7 @@ class CalculatorCore {
             hasPoint = false
             isOperatingValue = true
         } else {
-            mOperatingNum = BigDecimal("0")
+            mOperatingNum = BigDecimal(0)
             mSubscriber?.onValueChanged(getDisplayNumber())
             if (mSavedOperator != CalculatorOperator.None) {
                 mCurrentlyOperator = mSavedOperator
@@ -136,7 +136,7 @@ class CalculatorCore {
                 } catch (e: Throwable) {
                     isAllClearMode = true
                     mSubscriber?.onClearModeChanged(isAllClearMode)
-                    ac()
+                    clear()
                     mSubscriber?.onValueChanged("Error")
                     return
                 }
@@ -149,7 +149,7 @@ class CalculatorCore {
             mValueNum = BigDecimal(0)
         mSavedOperator = CalculatorOperator.None
         mCurrentlyOperator = CalculatorOperator.None
-        mOperatorNum = BigDecimal("0")
+        mOperatorNum = BigDecimal(0)
         isOperatingValue = true
         hasPoint = mOperatingNum.compareTo(BigDecimal(mOperatingNum.toBigInteger())) != 0
         mSubscriber?.onValueChanged(getDisplayNumber())

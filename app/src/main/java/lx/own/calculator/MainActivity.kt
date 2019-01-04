@@ -135,10 +135,10 @@ class MainActivity : AppCompatActivity() {
                     core.point()
                 }
                 R.id.ac -> {
-                    core.ac()
+                    core.clear()
                 }
                 R.id.pm -> {
-                    core.pm()
+                    core.negate()
                 }
                 R.id.backspace -> {
                     core.backspace()
