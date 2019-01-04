@@ -14,8 +14,9 @@ class MainActivity : AppCompatActivity() {
     private var display: TextView by Delegates.notNullVal()
     private var core: CalculatorCore by Delegates.notNullVal()
     private var operatorViews: Array<TextView> by Delegates.notNullVal()
-    private var ac: TextView by Delegates.notNullVal()//归零
+    private var ac: TextView by Delegates.notNullVal()
     private var operatorTextColors: IntArray by Delegates.notNullVal()
+    private var operatorBackgrounds: IntArray by Delegates.notNullVal()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,10 +56,10 @@ class MainActivity : AppCompatActivity() {
         subtraction.tag = CalculatorCore.CalculatorOperator.Subtraction
         addition.tag = CalculatorCore.CalculatorOperator.Addition
 
-        val attributes = theme.obtainStyledAttributes(intArrayOf(R.attr.specialButtonTextColor2, R.attr.specialButtonTextColor2Selected))
-        operatorTextColors = intArrayOf(attributes.getColor(0, 0), attributes.getColor(1, 0))
-        attributes.recycle()
-
+        val attr = theme.obtainStyledAttributes(intArrayOf(R.attr.specialButtonTextColor2, R.attr.specialButtonTextColor2Selected, R.attr.specialButtonBackground2, R.attr.specialButtonBackground2Selected))
+        operatorTextColors = intArrayOf(attr.getColor(0, 0), attr.getColor(1, 0))
+        operatorBackgrounds = intArrayOf(attr.getResourceId(2, 0), attr.getResourceId(3, 0))
+        attr.recycle()
         core = CalculatorCore()
         core.subscribe(object : CalculatorCore.CalculatorSubscriber {
             override fun onClearModeChanged(isAll: Boolean) {
@@ -68,10 +69,10 @@ class MainActivity : AppCompatActivity() {
             override fun onOperatorUsing(operator: CalculatorCore.CalculatorOperator) {
                 operatorViews.forEach {
                     if (it.tag == operator) {
-                        it.setBackgroundResource(R.drawable.special_button_background2_selected)
+                        it.setBackgroundResource(operatorBackgrounds[1])
                         it.setTextColor(operatorTextColors[1])
                     } else {
-                        it.setBackgroundResource(R.drawable.special_button_background2)
+                        it.setBackgroundResource(operatorBackgrounds[0])
                         it.setTextColor(operatorTextColors[0])
                     }
                 }

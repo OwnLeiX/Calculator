@@ -93,6 +93,7 @@ class CalculatorCore {
             mSubscriber?.onValueChanged(getDisplayNumber())
             mCurrentlyOperator = CalculatorOperator.None
             mSavedOperator = CalculatorOperator.None
+            mSubscriber?.onOperatorUsing(mCurrentlyOperator)
             hasPoint = false
             isOperatingValue = true
         } else {
