@@ -1,24 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <attr name="backgroundColor" format="reference" />
+
     <attr name="normalButtonBackground" format="reference" />
     <attr name="normalButtonBackgroundUnpressedColor" format="color" />
     <attr name="normalButtonBackgroundPressedColor" format="color" />
-    <attr name="normalButtonBackgroundStrokeColor" format="color" />
+    <attr name="normalButtonBackgroundUnpressedStrokeColor" format="color" />
+    <attr name="normalButtonBackgroundPressedStrokeColor" format="color" />
+    <attr name="normalButtonBackgroundStrokeWidth" format="dimension" />
     <attr name="normalButtonTextColor" format="color" />
+
+    <attr name="zeroButtonBackground" format="reference" />
+
     <attr name="specialButton1Background" format="reference" />
     <attr name="specialButton1BackgroundUnpressedColor" format="color" />
     <attr name="specialButton1BackgroundPressedColor" format="color" />
-    <attr name="specialButton1BackgroundStrokeColor" format="color" />
+    <attr name="specialButton1BackgroundUnpressedStrokeColor" format="color" />
+    <attr name="specialButton1BackgroundPressedStrokeColor" format="color" />
+    <attr name="specialButton1BackgroundStrokeWidth" format="dimension" />
     <attr name="specialButton1TextColor" format="color" />
+
     <attr name="specialButton2Background" format="reference" />
     <attr name="specialButton2BackgroundUnpressedColor" format="color" />
     <attr name="specialButton2BackgroundPressedColor" format="color" />
-    <attr name="specialButton2BackgroundStrokeColor" format="color" />
+    <attr name="specialButton2BackgroundUnpressedStrokeColor" format="color" />
+    <attr name="specialButton2BackgroundPressedStrokeColor" format="color" />
+    <attr name="specialButton2BackgroundStrokeWidth" format="dimension" />
     <attr name="specialButton2TextColor" format="color" />
+
     <attr name="specialButton2BackgroundRevert" format="reference" />
     <attr name="specialButton2BackgroundRevertUnpressedColor" format="color" />
     <attr name="specialButton2BackgroundRevertPressedColor" format="color" />
-    <attr name="specialButton2BackgroundRevertStrokeColor" format="color" />
+    <attr name="specialButton2BackgroundRevertUnpressedStrokeColor" format="color" />
+    <attr name="specialButton2BackgroundRevertPressedStrokeColor" format="color" />
+    <attr name="specialButton2BackgroundRevertStrokeWidth" format="dimension" />
     <attr name="specialButton2TextColorRevert" format="color" />
 </resources>

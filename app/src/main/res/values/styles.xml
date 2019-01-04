@@ -14,19 +14,27 @@
         <item name="normalButtonBackground">@drawable/normal_button_background</item>
         <item name="normalButtonBackgroundUnpressedColor">@color/gray32</item>
         <item name="normalButtonBackgroundPressedColor">@color/gray72</item>
-        <item name="normalButtonBackgroundStrokeColor">@color/transparent</item>
+        <item name="normalButtonBackgroundPressedStrokeColor">@color/transparent</item>
+        <item name="normalButtonBackgroundUnpressedStrokeColor">@color/transparent</item>
+        <item name="normalButtonBackgroundStrokeWidth">@dimen/none</item>
         <item name="normalButtonTextColor">@color/grayFE</item>
+
+        <item name="zeroButtonBackground">@drawable/normal_button_background_0</item>
 
         <item name="specialButton1Background">@drawable/special_button_background</item>
         <item name="specialButton1BackgroundUnpressedColor">@color/grayA4</item>
         <item name="specialButton1BackgroundPressedColor">@color/grayD8</item>
-        <item name="specialButton1BackgroundStrokeColor">@color/transparent</item>
+        <item name="specialButton1BackgroundUnpressedStrokeColor">@color/transparent</item>
+        <item name="specialButton1BackgroundPressedStrokeColor">@color/transparent</item>
+        <item name="specialButton1BackgroundStrokeWidth">@dimen/none</item>
         <item name="specialButton1TextColor">@color/black</item>
 
         <item name="specialButton2Background">@drawable/special_button_background2</item>
         <item name="specialButton2BackgroundUnpressedColor">@color/orange</item>
         <item name="specialButton2BackgroundPressedColor">@color/orange2</item>
-        <item name="specialButton2BackgroundStrokeColor">@color/transparent</item>
+        <item name="specialButton2BackgroundUnpressedStrokeColor">@color/transparent</item>
+        <item name="specialButton2BackgroundPressedStrokeColor">@color/transparent</item>
+        <item name="specialButton2BackgroundStrokeWidth">@dimen/none</item>
         <item name="specialButton2TextColor">@color/grayFE</item>
 
         <item name="specialButton2BackgroundRevert">
@@ -34,7 +42,9 @@
         </item>
         <item name="specialButton2BackgroundRevertUnpressedColor">@color/white</item>
         <item name="specialButton2BackgroundRevertPressedColor">@color/orange2</item>
-        <item name="specialButton2BackgroundRevertStrokeColor">@color/transparent</item>
+        <item name="specialButton2BackgroundRevertUnpressedStrokeColor">@color/transparent</item>
+        <item name="specialButton2BackgroundRevertPressedStrokeColor">@color/transparent</item>
+        <item name="specialButton2BackgroundRevertStrokeWidth">@dimen/none</item>
         <item name="specialButton2TextColorRevert">@color/orange</item>
     </style>
 

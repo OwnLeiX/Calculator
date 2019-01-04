@@ -9,7 +9,7 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
-        android:theme="@style/SupportTheme">
+        android:theme="@style/blackTheme">
         <activity
             android:name=".view.MainActivity"
             android:screenOrientation="portrait"

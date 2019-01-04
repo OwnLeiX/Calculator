@@ -3,11 +3,13 @@
     <item android:state_pressed="true">
         <shape android:shape="oval">
             <solid android:color="?attr/normalButtonBackgroundPressedColor" />
+            <stroke android:width="?attr/normalButtonBackgroundStrokeWidth" android:color="?attr/normalButtonBackgroundPressedStrokeColor" />
         </shape>
     </item>
     <item android:state_pressed="false">
         <shape android:shape="oval">
             <solid android:color="?attr/normalButtonBackgroundUnpressedColor" />
+            <stroke android:width="?attr/normalButtonBackgroundStrokeWidth" android:color="?attr/normalButtonBackgroundUnpressedStrokeColor" />
         </shape>
     </item>
 </selector>

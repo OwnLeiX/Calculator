@@ -3,11 +3,13 @@
     <item android:state_pressed="true">
         <shape android:shape="oval">
             <solid android:color="?attr/specialButton2BackgroundRevertPressedColor" />
+            <stroke android:width="?attr/specialButton2BackgroundRevertStrokeWidth" android:color="?attr/specialButton2BackgroundRevertPressedStrokeColor" />
         </shape>
     </item>
     <item android:state_pressed="false">
         <shape android:shape="oval">
             <solid android:color="?attr/specialButton2BackgroundRevertUnpressedColor" />
+            <stroke android:width="?attr/specialButton2BackgroundRevertStrokeWidth" android:color="?attr/specialButton2BackgroundRevertUnpressedStrokeColor" />
         </shape>
     </item>
 </selector>
