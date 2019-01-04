@@ -12,17 +12,48 @@ import kotlin.properties.Delegates
 class MainActivity : AppCompatActivity() {
 
     private var display: TextView by Delegates.notNullVal()
-    private var core: CalculatorCore by Delegates.notNullVal()
     private var operatorViews: Array<TextView> by Delegates.notNullVal()
     private var ac: TextView by Delegates.notNullVal()
     private var operatorTextColors: IntArray by Delegates.notNullVal()
     private var operatorBackgrounds: IntArray by Delegates.notNullVal()
+    private val subscriber: CalculatorCore.CalculatorSubscriber
+
+    init {
+        subscriber = object : CalculatorCore.CalculatorSubscriber {
+            override fun onClearModeChanged(isAll: Boolean) {
+                ac.text = if (isAll) "AC" else "C"
+            }
+
+            override fun onOperatorUsing(operator: CalculatorCore.CalculatorOperator) {
+                operatorViews.forEach {
+                    if (it.tag == operator) {
+                        it.setBackgroundResource(operatorBackgrounds[1])
+                        it.setTextColor(operatorTextColors[1])
+                    } else {
+                        it.setBackgroundResource(operatorBackgrounds[0])
+                        it.setTextColor(operatorTextColors[0])
+                    }
+                }
+            }
+
+            override fun onValueChanged(value: String) {
+                setSuitableSize(display, value)
+                display.text = value
+            }
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         bindViews()
         init()
+        CalculatorCore.instance.subscribe(subscriber)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        CalculatorCore.instance.unsubscribe(subscriber)
     }
 
     private fun bindViews() {
@@ -60,29 +91,6 @@ class MainActivity : AppCompatActivity() {
         operatorTextColors = intArrayOf(attr.getColor(0, 0), attr.getColor(1, 0))
         operatorBackgrounds = intArrayOf(attr.getResourceId(2, 0), attr.getResourceId(3, 0))
         attr.recycle()
-        core = CalculatorCore()
-        core.subscribe(object : CalculatorCore.CalculatorSubscriber {
-            override fun onClearModeChanged(isAll: Boolean) {
-                ac.text = if (isAll) "AC" else "C"
-            }
-
-            override fun onOperatorUsing(operator: CalculatorCore.CalculatorOperator) {
-                operatorViews.forEach {
-                    if (it.tag == operator) {
-                        it.setBackgroundResource(operatorBackgrounds[1])
-                        it.setTextColor(operatorTextColors[1])
-                    } else {
-                        it.setBackgroundResource(operatorBackgrounds[0])
-                        it.setTextColor(operatorTextColors[0])
-                    }
-                }
-            }
-
-            override fun onValueChanged(value: String) {
-                setSuitableSize(display, value)
-                display.text = value
-            }
-        })
         num0.tag = BigDecimal.ZERO
         num1.tag = BigDecimal.ONE
         num2.tag = BigDecimal(2)
@@ -129,28 +137,28 @@ class MainActivity : AppCompatActivity() {
                 R.id.num7,
                 R.id.num8,
                 R.id.num9 -> {
-                    core.number(v.tag as BigDecimal)
+                    CalculatorCore.instance.number(v.tag as BigDecimal)
                 }
                 R.id.point -> {
-                    core.point()
+                    CalculatorCore.instance.point()
                 }
                 R.id.ac -> {
-                    core.clear()
+                    CalculatorCore.instance.clear()
                 }
                 R.id.pm -> {
-                    core.negate()
+                    CalculatorCore.instance.negate()
                 }
                 R.id.backspace -> {
-                    core.backspace()
+                    CalculatorCore.instance.backspace()
                 }
                 R.id.division,
                 R.id.multiplication,
                 R.id.subtraction,
                 R.id.addition -> {
-                    core.operate(v.tag as CalculatorCore.CalculatorOperator)
+                    CalculatorCore.instance.operate(v.tag as CalculatorCore.CalculatorOperator)
                 }
                 R.id.evaluate -> {
-                    core.evaluate()
+                    CalculatorCore.instance.evaluate()
                 }
             }
         }
