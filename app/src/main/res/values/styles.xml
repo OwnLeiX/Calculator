@@ -10,16 +10,32 @@
 
     <style name="blackTheme" parent="SupportTheme">
         <item name="backgroundColor">@color/black</item>
+
         <item name="normalButtonBackground">@drawable/normal_button_background</item>
+        <item name="normalButtonBackgroundUnpressedColor">@color/gray32</item>
+        <item name="normalButtonBackgroundPressedColor">@color/gray72</item>
+        <item name="normalButtonBackgroundStrokeColor">@color/transparent</item>
         <item name="normalButtonTextColor">@color/grayFE</item>
-        <item name="specialButtonBackground">@drawable/special_button_background</item>
-        <item name="specialButtonTextColor">@color/black</item>
-        <item name="specialButtonBackground2">@drawable/special_button_background2</item>
-        <item name="specialButtonTextColor2">@color/grayFE</item>
-        <item name="specialButtonBackground2Selected">
+
+        <item name="specialButton1Background">@drawable/special_button_background</item>
+        <item name="specialButton1BackgroundUnpressedColor">@color/grayA4</item>
+        <item name="specialButton1BackgroundPressedColor">@color/grayD8</item>
+        <item name="specialButton1BackgroundStrokeColor">@color/transparent</item>
+        <item name="specialButton1TextColor">@color/black</item>
+
+        <item name="specialButton2Background">@drawable/special_button_background2</item>
+        <item name="specialButton2BackgroundUnpressedColor">@color/orange</item>
+        <item name="specialButton2BackgroundPressedColor">@color/orange2</item>
+        <item name="specialButton2BackgroundStrokeColor">@color/transparent</item>
+        <item name="specialButton2TextColor">@color/grayFE</item>
+
+        <item name="specialButton2BackgroundRevert">
             @drawable/special_button_background2_selected
         </item>
-        <item name="specialButtonTextColor2Selected">@color/orange</item>
+        <item name="specialButton2BackgroundRevertUnpressedColor">@color/white</item>
+        <item name="specialButton2BackgroundRevertPressedColor">@color/orange2</item>
+        <item name="specialButton2BackgroundRevertStrokeColor">@color/transparent</item>
+        <item name="specialButton2TextColorRevert">@color/orange</item>
     </style>
 
     <style name="baseButton">
@@ -36,20 +52,20 @@
         <item name="android:textSize">35sp</item>
     </style>
 
-    <style name="specialButton" parent="baseButton">
-        <item name="android:background">?attr/specialButtonBackground</item>
-        <item name="android:textColor">?attr/specialButtonTextColor</item>
+    <style name="specialButtonA" parent="baseButton">
+        <item name="android:background">?attr/specialButton1Background</item>
+        <item name="android:textColor">?attr/specialButton1TextColor</item>
     </style>
 
-    <style name="specialButton2" parent="baseButton">
-        <item name="android:background">?attr/specialButtonBackground2</item>
-        <item name="android:textColor">?attr/specialButtonTextColor2</item>
+    <style name="specialButtonB" parent="baseButton">
+        <item name="android:background">?attr/specialButton2Background</item>
+        <item name="android:textColor">?attr/specialButton2TextColor</item>
         <item name="android:textSize">35sp</item>
     </style>
 
-    <style name="specialButton2Selected" parent="baseButton">
-        <item name="android:background">?attr/specialButtonBackground2Selected</item>
-        <item name="android:textColor">?attr/specialButtonTextColor2Selected</item>
+    <style name="specialButtonBRevert" parent="baseButton">
+        <item name="android:background">?attr/specialButton2BackgroundRevert</item>
+        <item name="android:textColor">?attr/specialButton2TextColorRevert</item>
         <item name="android:textSize">35sp</item>
     </style>
 </resources>

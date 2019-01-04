@@ -1,4 +1,4 @@
-package lx.own.calculator
+package lx.own.calculator.core
 
 import java.lang.StringBuilder
 import java.math.BigDecimal
@@ -27,7 +27,7 @@ class CalculatorCore private constructor() {
         set(value) {
             if (isOperatingValue) mValueNum = value else mOperatorNum = value
         }
-    private val mSubscribers: LinkedBlockingQueue<CalculatorCore.CalculatorSubscriber> = LinkedBlockingQueue()
+    private val mSubscribers: LinkedBlockingQueue<CalculatorSubscriber> = LinkedBlockingQueue()
     private var mSavedOperator: CalculatorOperator = CalculatorOperator.None
     private var mCurrentlyOperator: CalculatorOperator = CalculatorOperator.None
     private var hasPoint: Boolean = false
@@ -218,7 +218,7 @@ class CalculatorCore private constructor() {
     }
 
     private fun formatNumberStr(numStr: String, offset: Int): String {
-        var pointIndex = numStr.indexOf(".")
+        var pointIndex = numStr.indexOf("")
         if (pointIndex in 0..3 || numStr.length <= 3) return numStr
         if (pointIndex == -1)
             pointIndex = numStr.length

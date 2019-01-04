@@ -1,4 +1,4 @@
-package lx.own.calculator
+package lx.own.calculator.view
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -6,6 +6,10 @@ import android.util.TypedValue
 import android.view.View
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_main.*
+import lx.own.calculator.R
+import lx.own.calculator.core.CalculatorCore
+import lx.own.calculator.utils.notNullVal
+import lx.own.calculator.utils.ThemeManager
 import java.math.BigDecimal
 import kotlin.properties.Delegates
 
@@ -44,6 +48,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(ThemeManager.instance.getTheme().resId)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         bindViews()
@@ -87,7 +92,7 @@ class MainActivity : AppCompatActivity() {
         subtraction.tag = CalculatorCore.CalculatorOperator.Subtraction
         addition.tag = CalculatorCore.CalculatorOperator.Addition
 
-        val attr = theme.obtainStyledAttributes(intArrayOf(R.attr.specialButtonTextColor2, R.attr.specialButtonTextColor2Selected, R.attr.specialButtonBackground2, R.attr.specialButtonBackground2Selected))
+        val attr = theme.obtainStyledAttributes(intArrayOf(R.attr.specialButton2TextColor, R.attr.specialButton2TextColorRevert, R.attr.specialButton2Background, R.attr.specialButton2BackgroundRevert))
         operatorTextColors = intArrayOf(attr.getColor(0, 0), attr.getColor(1, 0))
         operatorBackgrounds = intArrayOf(attr.getResourceId(2, 0), attr.getResourceId(3, 0))
         attr.recycle()

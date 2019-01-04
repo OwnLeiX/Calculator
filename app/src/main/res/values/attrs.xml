@@ -2,11 +2,23 @@
 <resources>
     <attr name="backgroundColor" format="reference" />
     <attr name="normalButtonBackground" format="reference" />
+    <attr name="normalButtonBackgroundUnpressedColor" format="color" />
+    <attr name="normalButtonBackgroundPressedColor" format="color" />
+    <attr name="normalButtonBackgroundStrokeColor" format="color" />
     <attr name="normalButtonTextColor" format="color" />
-    <attr name="specialButtonBackground" format="reference" />
-    <attr name="specialButtonTextColor" format="color" />
-    <attr name="specialButtonBackground2" format="reference" />
-    <attr name="specialButtonTextColor2" format="color" />
-    <attr name="specialButtonBackground2Selected" format="reference" />
-    <attr name="specialButtonTextColor2Selected" format="color" />
+    <attr name="specialButton1Background" format="reference" />
+    <attr name="specialButton1BackgroundUnpressedColor" format="color" />
+    <attr name="specialButton1BackgroundPressedColor" format="color" />
+    <attr name="specialButton1BackgroundStrokeColor" format="color" />
+    <attr name="specialButton1TextColor" format="color" />
+    <attr name="specialButton2Background" format="reference" />
+    <attr name="specialButton2BackgroundUnpressedColor" format="color" />
+    <attr name="specialButton2BackgroundPressedColor" format="color" />
+    <attr name="specialButton2BackgroundStrokeColor" format="color" />
+    <attr name="specialButton2TextColor" format="color" />
+    <attr name="specialButton2BackgroundRevert" format="reference" />
+    <attr name="specialButton2BackgroundRevertUnpressedColor" format="color" />
+    <attr name="specialButton2BackgroundRevertPressedColor" format="color" />
+    <attr name="specialButton2BackgroundRevertStrokeColor" format="color" />
+    <attr name="specialButton2TextColorRevert" format="color" />
 </resources>

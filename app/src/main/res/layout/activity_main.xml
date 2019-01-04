@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/backgroundColor"
-    tools:context=".MainActivity">
+    tools:context=".view.MainActivity">
 
     <Space
         android:id="@+id/space"
@@ -34,7 +34,7 @@
 
     <TextView
         android:id="@+id/ac"
-        style="@style/specialButton"
+        style="@style/specialButtonA"
         android:text="AC"
         app:layout_constraintBottom_toTopOf="@id/num7"
         app:layout_constraintHorizontal_chainStyle="spread"
@@ -44,7 +44,7 @@
 
     <TextView
         android:id="@+id/backspace"
-        style="@style/specialButton"
+        style="@style/specialButtonA"
         android:text="@string/arrow_left"
         app:layout_constraintLeft_toRightOf="@id/ac"
         app:layout_constraintRight_toLeftOf="@id/pm"
@@ -52,7 +52,7 @@
 
     <TextView
         android:id="@+id/pm"
-        style="@style/specialButton"
+        style="@style/specialButtonA"
         android:text="±"
         app:layout_constraintLeft_toRightOf="@id/backspace"
         app:layout_constraintRight_toLeftOf="@id/division"
@@ -60,7 +60,7 @@
 
     <TextView
         android:id="@+id/division"
-        style="@style/specialButton2"
+        style="@style/specialButtonB"
         android:text="÷"
         app:layout_constraintLeft_toRightOf="@id/pm"
         app:layout_constraintRight_toRightOf="parent"
@@ -90,7 +90,7 @@
 
     <TextView
         android:id="@+id/multiplication"
-        style="@style/specialButton2"
+        style="@style/specialButtonB"
         android:text="×"
         app:layout_constraintLeft_toLeftOf="@id/division"
         app:layout_constraintTop_toTopOf="@id/num7" />
@@ -119,7 +119,7 @@
 
     <TextView
         android:id="@+id/subtraction"
-        style="@style/specialButton2"
+        style="@style/specialButtonB"
         android:text="-"
         app:layout_constraintLeft_toLeftOf="@id/division"
         app:layout_constraintTop_toTopOf="@id/num4" />
@@ -148,7 +148,7 @@
 
     <TextView
         android:id="@+id/addition"
-        style="@style/specialButton2"
+        style="@style/specialButtonB"
         android:text="+"
         app:layout_constraintLeft_toLeftOf="@id/division"
         app:layout_constraintTop_toTopOf="@id/num1" />
@@ -179,7 +179,7 @@
 
     <TextView
         android:id="@+id/evaluate"
-        style="@style/specialButton2"
+        style="@style/specialButtonB"
         android:text="="
         app:layout_constraintLeft_toLeftOf="@id/division"
         app:layout_constraintTop_toTopOf="@id/num0" />
