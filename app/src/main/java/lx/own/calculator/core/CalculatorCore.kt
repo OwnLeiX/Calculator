@@ -1,6 +1,5 @@
 package lx.own.calculator.core
 
-import java.lang.StringBuilder
 import java.math.BigDecimal
 import java.math.MathContext
 import java.math.RoundingMode
@@ -218,7 +217,7 @@ class CalculatorCore private constructor() {
     }
 
     private fun formatNumberStr(numStr: String, offset: Int): String {
-        var pointIndex = numStr.indexOf("")
+        var pointIndex = numStr.indexOf(".")
         if (pointIndex in 0..3 || numStr.length <= 3) return numStr
         if (pointIndex == -1)
             pointIndex = numStr.length
