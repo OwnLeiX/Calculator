@@ -134,6 +134,7 @@ class CalculatorCore private constructor() {
                 notifyOperatorChanged = true
                 mCurrentlyOperator = mSavedOperator
             }
+            hasPoint = false
             isAllClearMode = true
         }
         val displayNumber = getDisplayNumber()
